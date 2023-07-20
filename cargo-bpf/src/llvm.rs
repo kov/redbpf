@@ -20,8 +20,8 @@ and then calls LLVM API directly to parse and optimize the emitted bitcode
 second.
 */
 cfg_if::cfg_if! {
-    if #[cfg(feature = "llvm-sys-130")] {
-        use llvm_sys_130 as llvm_sys;
+    if #[cfg(feature = "llvm-sys-160")] {
+        use llvm_sys_160 as llvm_sys;
     } else {
         compile_error!("Specify --features llvm13");
     }
