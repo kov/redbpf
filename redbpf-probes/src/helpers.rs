@@ -33,7 +33,7 @@ impl TraceMessage {
     #[inline]
     pub fn new() -> Self {
         TraceMessage {
-            msg: unsafe { core::mem::MaybeUninit::uninit().assume_init() },
+            msg: unsafe { core::mem::MaybeUninit::zeroed().assume_init() },
             write_i: 0,
         }
     }
