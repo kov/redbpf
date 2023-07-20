@@ -121,7 +121,7 @@ unsafe fn inject_exit_call(context: LLVMContextRef, func: LLVMValueRef, builder:
     let last = LLVMGetLastInstruction(block);
     LLVMPositionBuilderBefore(builder, last);
     let c_str = CString::new("").unwrap();
-    LLVMBuildCall(builder, exit, ptr::null_mut(), 0, c_str.as_ptr());
+    LLVMBuildCall2(builder, exit_sig, exit, ptr::null_mut(), 0, c_str.as_ptr());
 }
 
 /// Find debugger intrinsics handling methods of RedBPF maps. The the type
